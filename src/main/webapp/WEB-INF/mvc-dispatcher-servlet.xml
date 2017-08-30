@@ -12,9 +12,9 @@
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/test_data_db" />
+		<property name="url" value="jdbc:mysql://localhost:3306/phadu_fantasy_core_db" />
 		<property name="username" value="root" />
-		<property name="password" value="Q3tech123" />
+		<property name="password" value="root" />
 	</bean>
 
 	<bean id="sessionFactory"

@@ -179,6 +179,14 @@ public class MatchSchedule extends CreateAndUpdateEntity implements Serializable
 		this.matchStartTime = matchStartTime;
 	}
 
+	@Override
+	public String toString() {
+		return "MatchSchedule [id=" + id + ", status=" + status + ", relatedName=" + relatedName + ", name=" + name
+				+ ", shortName=" + shortName + ", title=" + title + ", season=" + season + ", format=" + format
+				+ ", venue=" + venue + ", firstContestent=" + firstContestent + ", secondContestent=" + secondContestent
+				+ ", winnerTeam=" + winnerTeam + ", matchStartTime=" + matchStartTime + "]";
+	}
+
 
 
 }

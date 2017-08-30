@@ -11,28 +11,33 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.oauth2mvc.dto.FixturesClientDto;
 import com.oauth2mvc.model.MatchSchedule;
 import com.oauth2mvc.services.DataServices;
+import com.oauth2mvc.services.fixtures.FixturesService;
 import com.oauth2mvc.util.Constants;
 import com.oauth2mvc.util.ServiceTemplate;
 
 @RestController
-@RequestMapping("/api/fixtures")
+@RequestMapping("/restapi/fixtures")
 public class FixturesController {
 	
+/*	@Autowired
+	DataServices dataServices;*/
+	
 	@Autowired
-	DataServices dataServices;
+	FixturesService fixturesService;
 	
 	@RequestMapping(value = "/getAllScheduledMatches/{userId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<ServiceTemplate> getAllScheduledMatches(@PathVariable Long userId){
 		
-		List<MatchSchedule> result = null;
+		List<FixturesClientDto> result = null;
 		ServiceTemplate serviceTemplate = null;
 		try {
-			result = dataServices.returnAllMatchSchedule();
+			result = fixturesService.returnAllMatchSchedule();
 			serviceTemplate = new ServiceTemplate(Constants.TYPE_SUCCESS, result, Constants.STATUS_SUCCESS, 1l);
 		} catch (Exception e) {
-			serviceTemplate = new ServiceTemplate(Constants.TYPE_FAILURE, null, Constants.STATUS_FAILURE, 0l);
+			serviceTemplate = new ServiceTemplate(Constants.TYPE_FAILURE, e.getMessage(), Constants.STATUS_FAILURE, 0l);
 			e.printStackTrace();
 		}
 		
