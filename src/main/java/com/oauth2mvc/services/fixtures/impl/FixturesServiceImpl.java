@@ -35,7 +35,7 @@ public class FixturesServiceImpl implements FixturesService {
 				matchCientList.add(midwayMatchListObject);
 			}
 		}else{
-			System.out.println("Response found null or empty");
+			System.out.println("");
 		}
 		
 		
