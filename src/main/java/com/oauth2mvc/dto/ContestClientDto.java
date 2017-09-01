@@ -19,9 +19,9 @@ public class ContestClientDto implements Serializable{
 		super();
 	}
 	
-	private String name;
-	
 	private Long id;
+	
+	private String name;
 	
 	private BigDecimal totalWinningAmount;
 	
@@ -34,8 +34,6 @@ public class ContestClientDto implements Serializable{
 	private short contestType;
 	
 	private Integer totalNoOfCurrentParticipents;
-	
-	private Boolean isUserAssociated;
 	
 	//////////////////////////////////////////////////////////////
 	/////////////GETTERS AND SETTERS//////////////////////////////
@@ -104,15 +102,6 @@ public class ContestClientDto implements Serializable{
 	public void setTotalNoOfCurrentParticipents(Integer totalNoOfCurrentParticipents) {
 		this.totalNoOfCurrentParticipents = totalNoOfCurrentParticipents;
 	}
-
-	public Boolean getIsUserAssociated() {
-		return isUserAssociated;
-	}
-
-	public void setIsUserAssociated(Boolean isUserAssociated) {
-		this.isUserAssociated = isUserAssociated;
-	}
-	
 	
 
 }

@@ -11,6 +11,6 @@ import com.oauth2mvc.dto.ContestClientExposedObjectDto;
  */
 public interface ContestService {
 
-	List<ContestClientExposedObjectDto> getAllContestForAMatch(Long userId, Long matchId);
+	List<ContestClientExposedObjectDto> getAllContestForAMatch(Long userId, Long matchId) throws Exception;
 	
 }
