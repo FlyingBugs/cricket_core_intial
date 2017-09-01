@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.oauth2mvc.dto.FixturesClientDto;
-import com.oauth2mvc.model.MatchSchedule;
-import com.oauth2mvc.services.DataServices;
 import com.oauth2mvc.services.fixtures.FixturesService;
 import com.oauth2mvc.util.Constants;
 import com.oauth2mvc.util.ServiceTemplate;
@@ -22,8 +20,6 @@ import com.oauth2mvc.util.ServiceTemplate;
 @RequestMapping("/restapi/fixtures")
 public class FixturesController {
 	
-/*	@Autowired
-	DataServices dataServices;*/
 	
 	@Autowired
 	FixturesService fixturesService;

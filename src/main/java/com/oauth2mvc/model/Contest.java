@@ -2,7 +2,6 @@ package com.oauth2mvc.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -45,7 +44,7 @@ public class Contest extends CreateAndUpdateEntity implements Serializable {
 	private Integer maxContestent; 
 	
 	@Column(name = "max_winner")
-	private Integer maxWinner;	
+	private Integer maxWinnerCount;	
 	
 	// Foreign key from match_schedule table
 	@Column(name = "match_id")
@@ -94,11 +93,11 @@ public class Contest extends CreateAndUpdateEntity implements Serializable {
 	}
 
 	public Integer getMaxWinner() {
-		return maxWinner;
+		return maxWinnerCount;
 	}
 
 	public void setMaxWinner(Integer maxWinner) {
-		this.maxWinner = maxWinner;
+		this.maxWinnerCount = maxWinner;
 	}
 
 	public Integer getMatchId() {

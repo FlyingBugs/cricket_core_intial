@@ -11,6 +11,6 @@ import com.oauth2mvc.dto.FixturesClientDto;
  */
 public interface FixturesService {
 
-	public List<FixturesClientDto> returnAllMatchSchedule() throws Exception;
+	List<FixturesClientDto> returnAllMatchSchedule() throws Exception;
 	
 }

@@ -23,6 +23,9 @@ public class FixturesServiceImpl implements FixturesService {
 		
 		List<FixturesClientDto> matchCientList = null;
 		
+		// Need to check weather cache hold the result or not, if yes then fetch and return else
+		// process rest of the code.
+		
 		List<MatchSchedule> matchList = fixturesDao.returnAllMatchSchedule();
 		
 		if(matchList != null && !matchList.isEmpty()){
@@ -34,6 +37,9 @@ public class FixturesServiceImpl implements FixturesService {
 				midwayMatchListObject = generateMatchListObject(matchScheduleTemp);
 				matchCientList.add(midwayMatchListObject);
 			}
+			
+			// Need to update the cache if results are not in cache, This should happen only once.
+			
 		}else{
 			System.out.println("");
 		}
