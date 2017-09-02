@@ -11,6 +11,6 @@ import com.oauth2mvc.model.Contest;
  */
 public interface ContestDao {
 
-	List<Contest> getAllContestForAMatch(Long matchId) throws Exception;
+	List<Object[]> getAllContestForAMatch(Long matchId) throws Exception;
 	
 }

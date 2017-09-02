@@ -39,9 +39,44 @@ public class CustomerTeamMapping extends CreateAndUpdateEntity implements Serial
 	@Column(name = "team_id")
 	private String teamId;
 
+
 	//////////////////////////////////////////////////////////////
 	/////////////GETTERS AND SETTERS//////////////////////////////
 	//////////////////////////////////////////////////////////////
 
+
+	public Long getId() {
+		return id;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+	public Long getCustomerId() {
+		return customerId;
+	}
+
+
+	public void setCustomerId(Long customerId) {
+		this.customerId = customerId;
+	}
+
+
+	public String getTeamId() {
+		return teamId;
+	}
+
+
+	public void setTeamId(String teamId) {
+		this.teamId = teamId;
+	}
+	
+	@Override
+	public String toString() {
+		return "CustomerTeamMapping [id=" + id + ", customerId=" + customerId + ", teamId=" + teamId + "]";
+	}
 
 }

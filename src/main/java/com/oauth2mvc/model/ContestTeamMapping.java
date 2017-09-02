@@ -67,4 +67,9 @@ public class ContestTeamMapping extends CreateAndUpdateEntity implements Seriali
 		this.teamId = teamId;
 	}
 
+	@Override
+	public String toString() {
+		return "ContestTeamMapping [id=" + id + ", contestId=" + contestId + ", teamId=" + teamId + "]";
+	}
+
 }

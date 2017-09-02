@@ -48,7 +48,7 @@ public class Contest extends CreateAndUpdateEntity implements Serializable {
 	
 	// Foreign key from match_schedule table
 	@Column(name = "match_id")
-	private Integer matchId;	
+	private Long matchId;	
 
 	@Column(name = "contest_type")
 	private Short contestType;	
@@ -100,11 +100,11 @@ public class Contest extends CreateAndUpdateEntity implements Serializable {
 		this.maxWinnerCount = maxWinner;
 	}
 
-	public Integer getMatchId() {
+	public Long getMatchId() {
 		return matchId;
 	}
 
-	public void setMatchId(Integer matchId) {
+	public void setMatchId(Long matchId) {
 		this.matchId = matchId;
 	}
 
@@ -124,4 +124,11 @@ public class Contest extends CreateAndUpdateEntity implements Serializable {
 		this.entryFees = entryFees;
 	}	
 
+	@Override
+	public String toString() {
+		return "Contest [id=" + id + ", name=" + name + ", totalWinningAmount=" + totalWinningAmount
+				+ ", maxContestent=" + maxContestent + ", maxWinnerCount=" + maxWinnerCount + ", matchId=" + matchId
+				+ ", contestType=" + contestType + ", entryFees=" + entryFees + "]";
+	}
+	
 }

@@ -33,7 +33,7 @@ public class ContestClientDto implements Serializable{
 	
 	private short contestType;
 	
-	private Integer totalNoOfCurrentParticipents;
+	private Long totalNoOfCurrentParticipents;
 	
 	//////////////////////////////////////////////////////////////
 	/////////////GETTERS AND SETTERS//////////////////////////////
@@ -95,12 +95,21 @@ public class ContestClientDto implements Serializable{
 		this.contestType = contestType;
 	}
 
-	public Integer getTotalNoOfCurrentParticipents() {
+	public Long getTotalNoOfCurrentParticipents() {
 		return totalNoOfCurrentParticipents;
 	}
 
-	public void setTotalNoOfCurrentParticipents(Integer totalNoOfCurrentParticipents) {
+	public void setTotalNoOfCurrentParticipents(Long totalNoOfCurrentParticipents) {
 		this.totalNoOfCurrentParticipents = totalNoOfCurrentParticipents;
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "ContestClientDto [id=" + id + ", name=" + name + ", totalWinningAmount=" + totalWinningAmount
+				+ ", maxWinnerCount=" + maxWinnerCount + ", entryFees=" + entryFees + ", maxContestent=" + maxContestent
+				+ ", contestType=" + contestType + ", totalNoOfCurrentParticipents=" + totalNoOfCurrentParticipents
+				+ "]";
 	}
 	
 

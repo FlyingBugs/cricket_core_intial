@@ -36,11 +36,17 @@ public class ContestController {
 	public ResponseEntity<ServiceTemplate> getAllContestForAMatch(@PathVariable Long userId, @PathVariable Long matchId){
 		
 		ServiceTemplate serviceTemplate = null;
-		List<ContestClientExposedObjectDto> result = null;
+		ContestClientExposedObjectDto result = null;
 		
 		try{
 			result = contestService.getAllContestForAMatch(userId, matchId);
-			serviceTemplate = new ServiceTemplate(Constants.TYPE_SUCCESS, result, Constants.STATUS_SUCCESS, 1l);
+			
+			if(result == null){
+				serviceTemplate = new ServiceTemplate(Constants.TYPE_FAILURE, "No data found for inout", Constants.STATUS_SUCCESS, 1l);
+			} else {
+				serviceTemplate = new ServiceTemplate(Constants.TYPE_SUCCESS, result, Constants.STATUS_SUCCESS, 1l);
+			}
+			
 		} catch(Exception e){
 			serviceTemplate = new ServiceTemplate(Constants.TYPE_FAILURE, e.getMessage(), Constants.STATUS_FAILURE, 0l);
 			LOGGER.info("Exception in getAllContestForAMatch of ContestController : ",e);
